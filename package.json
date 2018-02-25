@@ -1,0 +1,7 @@
+{
+  "name": "typescript_overview",
+  "version": "1.0",
+  "dependencies": {
+    "typescript": "^2.7.2"
+  }
+}
