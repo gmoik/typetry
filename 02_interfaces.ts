@@ -13,13 +13,13 @@ function printLabel(a: LabelledValue) {
     if(a.description) {
         console.log(a.description);
     }
-    // a.version = 11; -> ERROR
+    // a.version = 11; // -> ERROR
 }
 let ab = {
-        siz: 10, // not in interface
-        label: "Überschrift",
-        version: 10
-    };
+    size: 10, // not in interface
+    label: "Überschrift",
+    version: 10,
+};
 printLabel(ab);
 
 // - ReadonlyArray --------------------------------------------------------------------------------
@@ -38,10 +38,11 @@ interface SearchFunc {
 }
 
 let mySearch: SearchFunc;
-mySearch = function(src, sub) {
+mySearch = (src, sub) => {
     let result = src.search(sub);
     return result > -1;
 }
+//Todo andere Schreibweise...
 
 console.log(mySearch('Hallo Georg, wie geht´s','Georg'));
 

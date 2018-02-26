@@ -115,3 +115,7 @@ let something: any = "this is a string";
 let lengthA: number = (<string>something).length;
 let lengthB: number = (something as string).length;
 // like a cast without checking -> "trust me, I know what I'm doing"
+
+something = 5;
+let test: string = something.toString();
+console.log(typeof(test)); // string

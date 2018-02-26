@@ -3,11 +3,9 @@
 // ------------------------------------------------------------------------------------------------
 
 function buildName1(firstName: string, lastName?: string) {
-    if (lastName)
-        return firstName + " " + lastName;
-    else
-        return firstName;
+    return lastName ? firstName + " " + lastName : firstName;
 }
+
 console.log(buildName1("Michael","Friessnegg")); // Michael Friessnegg
 console.log(buildName1("Patrick"));              // Patrick
 
@@ -15,7 +13,7 @@ function buildName2(firstName: string, lastName = "Musk") {
     return firstName + " " + lastName;
 }
 
-console.log(buildName2("Alon")); // Will Smith
+console.log(buildName2("Alon")); // Alon Musk
 
 // - Rest Parameters ------------------------------------------------------------------------------
 

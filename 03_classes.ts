@@ -9,10 +9,10 @@ class Greeter {
 
     readonly version: number = 10;
 
-    get Name(): string {
+    get name(): string {
         return this._name;
     }
-    set Name(newShouter: string) {
+    set name(newShouter: string) {
         if(newShouter.length > 3) {
             this._name = newShouter;
         }
@@ -32,7 +32,7 @@ class Greeter {
 
 class BigGreeter extends Greeter {
     bigGreet() {
-        return "Big Hello  " + this.greeting;
+        return "Big Hello " + this.greeting;
     }
 }
 
@@ -54,13 +54,13 @@ console.log(bigGreeter.greet());    // Hello World
 console.log(bigGreeter.bigGreet()); // Big Hallo World
 console.log(smallGreeter.greet());  // hello world
 
-greeter.Name = 'Ma';                // ERROR Name is to short!
+greeter.name = 'Ma';                // ERROR Name is to short!
 
-console.log(greeter.Name);          // undefined
+console.log(greeter.name);          // undefined
 
-greeter.Name = 'Magdalena';
+greeter.name = 'Magdalena';
 
-console.log(greeter.Name);          // Magdalena
+console.log(greeter.name);          // Magdalena
 
 // - Abstract Class -------------------------------------------------------------------------------
 
@@ -89,7 +89,8 @@ let group: Group;           // is allowed
 group = new PartnerGroup();
 group.printName();          // Group name is Partner
 group.printMeeting();       // The Partner Group meets each Monday at 10am.
-// group.generateReports(); // ERROR method doesn't exist on declared abstract type
+// group.generateReports();   // ERROR method doesn't exist on declared abstract type
+(<PartnerGroup>group).generateReports(); 
 
 // - Interfaces and Classes -----------------------------------------------------------------------
 
